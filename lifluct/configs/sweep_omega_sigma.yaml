@@ -1,0 +1,13 @@
+experiment_id: phase4_sweep_omega_sigma
+configs:
+  - label: dynamic
+    path: baseline_dynamic.yaml
+    model_type: dynamic_fee_single
+  - label: lifluct
+    path: phase4_train_regime.yaml
+    model_type: lifluct_multi_cell
+seeds: [1, 2, 3]
+sweep:
+  fitness_omega: [0.5, 1.0, 1.5]
+  sigma: [0.01, 0.02, 0.05]
+group_by: [model_type, fitness_omega, sigma]

@@ -1,0 +1,17 @@
+{
+  "mcpServers": {
+    "lifluct": {
+      "command": "/Users/sunchuljung/repo/zotanika/turgor/lifluct/.venv/bin/python3",
+      "args": [
+        "/Users/sunchuljung/repo/zotanika/turgor/lifluct/plugin/mcp/server/server.py",
+        "--mode",
+        "stdio"
+      ],
+      "env": {
+        "PYTHONPATH": "/Users/sunchuljung/repo/zotanika/turgor/lifluct/plugin/mcp/server:/Users/sunchuljung/repo/zotanika/turgor/lifluct",
+        "LIFLUCT_RUNS_DIR": "/Users/sunchuljung/repo/zotanika/turgor/lifluct/runs",
+        "LIFLUCT_CONFIG_DIR": "/Users/sunchuljung/repo/zotanika/turgor/lifluct/lifluct/configs"
+      }
+    }
+  }
+}

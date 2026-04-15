@@ -1,0 +1,15 @@
+family_name: best_fixed_train_family
+family_type: best_fixed_search
+description: >
+  Serious best-fixed single-cell search over a multi-regime no-lysis train family.
+family: no_lysis
+search_profile: serious
+search_budget: 128
+search_seed: 17
+objective_mode: lp_minus_hodl_minus_trader_cost
+aggregate_mode: downside_robust
+train_configs:
+  - ../phase4_train_regime.yaml
+  - ../phase4_test_regime_high_vol.yaml
+  - ../phase4_test_regime_low_vol.yaml
+test_family_manifest: best_fixed_test_family.yaml

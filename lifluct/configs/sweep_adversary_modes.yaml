@@ -1,0 +1,18 @@
+experiment_id: phase4_sweep_adversary_modes
+configs:
+  - label: dynamic
+    path: phase4_train_regime.yaml
+    model_type: dynamic_fee_single
+    overrides:
+      baseline_type: dynamic_fee_single
+      num_cells: 1
+      enable_evolution: false
+      use_turgor: false
+      beta: 0.0
+  - label: lifluct
+    path: phase4_train_regime.yaml
+    model_type: lifluct_multi_cell
+seeds: [1, 2, 3]
+sweep:
+  toxic_mode: [cheapest_active, fee_aware_max_extraction, sabotage_targeted_cell, burst_toxicity]
+group_by: [model_type, toxic_mode]

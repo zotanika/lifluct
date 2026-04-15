@@ -1,0 +1,8 @@
+family_name: best_fixed_test_family
+description: >
+  Out-of-sample evaluation family for the fixed single-cell benchmark.
+test_configs:
+  - ../phase4_test_regime_low_vol.yaml
+  - ../phase4_test_regime_high_vol.yaml
+  - ../phase4_test_regime_oracle_lag.yaml
+  - ../phase4_test_regime_sabotage.yaml

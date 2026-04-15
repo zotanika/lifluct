@@ -1,0 +1,14 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.DS_Store
+runs/
+reports/*
+!reports/templates/
+!reports/templates/**
+dist/
+build/
+*.egg-info/
+.worktrees/
+docs/plans

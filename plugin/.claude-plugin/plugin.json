@@ -1,0 +1,20 @@
+{
+  "name": "lifluct",
+  "version": "0.1.1",
+  "description": "LIFLUCT liquidity policy experiment assistant — run, analyze, compare AMM policies with AI guidance",
+  "commands": "./commands/claude/",
+  "agents": [
+    "./agents/claude/lab-assistant.md",
+    "./agents/claude/batch-runner.md"
+  ],
+  "mcpServers": {
+    "lab": {
+      "command": "${CLAUDE_PLUGIN_ROOT}/scripts/bootstrap-mcp.sh",
+      "env": {
+        "LIFLUCT_RUNS_DIR": "${WORKING_DIR}/runs",
+        "LIFLUCT_CONFIG_DIR": "${WORKING_DIR}/lifluct/configs"
+      },
+      "description": "LIFLUCT experiment engine — run, analyze, compare liquidity policies"
+    }
+  }
+}

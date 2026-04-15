@@ -1,0 +1,22 @@
+family_name: family_no_lysis
+description: >
+  Fair no-lysis comparison family. Provide a serious best-fixed candidate config at runtime.
+comparison_family: no_lysis
+models:
+  - static_cpmm
+  - dynamic_fee_single
+  - best_fixed_single_cell
+  - lifluct_multi_cell_no_lysis
+seed_start: 1
+seed_count: 16
+retention_mode: summary_only
+lysis_allowed: false
+attribution_robustness_required: false
+best_fixed_search_manifest: best_fixed_train_family.yaml
+regimes:
+  - regime_id: moderate_train
+    base_config: ../phase4_train_regime.yaml
+  - regime_id: low_vol
+    base_config: ../phase4_test_regime_low_vol.yaml
+  - regime_id: high_vol
+    base_config: ../phase4_test_regime_high_vol.yaml

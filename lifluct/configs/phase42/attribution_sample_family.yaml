@@ -1,0 +1,23 @@
+family_name: family_attribution_sample
+description: >
+  Smaller trace-enabled family for attribution robustness and ranking-stability analysis.
+comparison_family: no_lysis
+models:
+  - dynamic_fee_single
+  - best_fixed_single_cell
+  - lifluct_multi_cell_no_lysis
+seed_start: 1
+seed_count: 4
+retention_mode: hybrid_debug
+hybrid_debug_first_n: 12
+hybrid_debug_fallback: epoch_only
+lysis_allowed: false
+attribution_robustness_required: true
+best_fixed_search_manifest: best_fixed_train_family.yaml
+regimes:
+  - regime_id: attribution_moderate
+    base_config: ../phase4_train_regime.yaml
+  - regime_id: attribution_oracle_lag
+    base_config: ../phase4_test_regime_oracle_lag.yaml
+  - regime_id: attribution_sabotage
+    base_config: ../phase4_test_regime_sabotage.yaml

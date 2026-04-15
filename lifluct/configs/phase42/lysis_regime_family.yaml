@@ -1,0 +1,21 @@
+family_name: family_lysis
+description: >
+  Fair lysis-enabled comparison family. This excludes static CPMM by design.
+comparison_family: lysis_enabled
+models:
+  - dynamic_fee_single_with_lysis
+  - best_fixed_single_cell_with_lysis
+  - lifluct_multi_cell_with_lysis
+seed_start: 1
+seed_count: 16
+retention_mode: summary_only
+lysis_allowed: true
+attribution_robustness_required: false
+best_fixed_search_manifest: best_fixed_train_family.yaml
+regimes:
+  - regime_id: lysis_default
+    base_config: ../lifluct_lysis.yaml
+  - regime_id: sabotage
+    base_config: ../phase4_test_regime_sabotage.yaml
+    overrides:
+      lysis_mode: hard

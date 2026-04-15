@@ -1,0 +1,18 @@
+base_config: baseline_dynamic.yaml
+sweep:
+  sigma:
+    - 0.01
+    - 0.02
+    - 0.05
+  f_min:
+    - 0.002
+    - 0.003
+  mu:
+    - 0.10
+    - 0.15
+  tau:
+    - 0.001
+    - 0.002
+  oracle_lag_steps:
+    - 0
+    - 3

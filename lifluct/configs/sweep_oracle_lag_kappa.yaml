@@ -1,0 +1,10 @@
+experiment_id: phase4_sweep_oracle_lag_kappa
+configs:
+  - label: lifluct
+    path: phase4_test_regime_oracle_lag.yaml
+    model_type: lifluct_multi_cell
+seeds: [1, 2, 3]
+sweep:
+  oracle_lag_steps: [0, 1, 3, 5]
+  kappa: [2.0, 3.0, 4.0]
+group_by: [model_type, oracle_lag_steps, kappa]

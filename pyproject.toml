@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lifluct"
+version = "0.1.1"
+description = "Research-grade simulation and adjudication toolkit for LIFLUCT Protocol."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "matplotlib>=3.9",
+  "numpy>=2.0",
+  "PyYAML>=6.0",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.0",
+]
+
+[project.scripts]
+lifluct = "lifluct.cli.main:main"
+
+[tool.setuptools.packages.find]
+include = ["lifluct*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

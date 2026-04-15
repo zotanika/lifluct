@@ -1,0 +1,14 @@
+# Serious best-fixed manifest for out-of-sample benchmarking.
+# This is the recommended non-smoke entrypoint for fixed single-cell search.
+search_profile: serious
+search_budget: 128
+search_seed: 7
+objective_mode: lp_minus_hodl
+family: no_lysis
+train_configs:
+  - phase4_train_regime.yaml
+test_configs:
+  - best_fixed_testset_lowvol.yaml
+  - best_fixed_testset_highvol.yaml
+  - best_fixed_testset_oraclelag.yaml
+  - best_fixed_testset_sabotage.yaml

@@ -1,0 +1,39 @@
+family_name: family_adversary_frontier
+description: >
+  Adversary frontier that sweeps toxic modes without changing the core pricing formulas.
+comparison_family: no_lysis
+models:
+  - dynamic_fee_single
+  - best_fixed_single_cell
+  - lifluct_multi_cell_no_lysis
+seed_start: 1
+seed_count: 12
+retention_mode: summary_only
+lysis_allowed: false
+attribution_robustness_required: false
+best_fixed_search_manifest: best_fixed_train_family.yaml
+regimes:
+  - regime_id: cheapest_active
+    base_config: ../phase4_test_regime_sabotage.yaml
+    overrides:
+      toxic_mode: cheapest_active
+      toxic_trade_probability: 1.0
+  - regime_id: fee_aware_max_extraction
+    base_config: ../phase4_test_regime_sabotage.yaml
+    overrides:
+      toxic_mode: fee_aware_max_extraction
+      toxic_trade_probability: 1.0
+  - regime_id: sabotage_targeted_cell
+    base_config: ../phase4_test_regime_sabotage.yaml
+    overrides:
+      toxic_mode: sabotage_targeted_cell
+      sabotage_target_cell_mode: weakest_fitness
+      toxic_trade_probability: 1.0
+  - regime_id: burst_toxicity
+    base_config: ../phase4_test_regime_sabotage.yaml
+    overrides:
+      toxic_mode: burst_toxicity
+      toxic_trade_probability: 0.2
+      toxic_burst_probability: 1.0
+      toxic_burst_start_step: 50
+      toxic_burst_end_step: 120

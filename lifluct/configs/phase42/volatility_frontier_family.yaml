@@ -1,0 +1,32 @@
+family_name: family_volatility_frontier
+description: >
+  Volatility sweep for no-lysis comparisons across low, medium, high, and extreme sigma.
+comparison_family: no_lysis
+models:
+  - static_cpmm
+  - dynamic_fee_single
+  - best_fixed_single_cell
+  - lifluct_multi_cell_no_lysis
+seed_start: 1
+seed_count: 16
+retention_mode: summary_only
+lysis_allowed: false
+attribution_robustness_required: false
+best_fixed_search_manifest: best_fixed_train_family.yaml
+regimes:
+  - regime_id: sigma_low
+    base_config: ../phase4_test_regime_low_vol.yaml
+    overrides:
+      sigma: 0.01
+  - regime_id: sigma_med
+    base_config: ../phase4_train_regime.yaml
+    overrides:
+      sigma: 0.02
+  - regime_id: sigma_high
+    base_config: ../phase4_test_regime_high_vol.yaml
+    overrides:
+      sigma: 0.05
+  - regime_id: sigma_extreme
+    base_config: ../phase4_test_regime_high_vol.yaml
+    overrides:
+      sigma: 0.08

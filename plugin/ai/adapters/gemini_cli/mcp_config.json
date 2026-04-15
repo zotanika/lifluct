@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "lifluct": {
+      "command": "lifluct-mcp",
+      "args": [
+        "serve",
+        "--mode",
+        "stdio"
+      ],
+      "env": {
+        "LIFLUCT_RUNS_DIR": "./runs",
+        "LIFLUCT_CONFIG_DIR": "./lifluct/configs"
+      }
+    }
+  }
+}

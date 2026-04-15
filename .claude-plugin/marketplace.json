@@ -1,0 +1,13 @@
+{
+  "name": "zotanika",
+  "owner": {
+    "name": "Zotanika",
+    "url": "https://github.com/zotanika"
+  },
+  "plugins": [
+    {
+      "name": "lifluct",
+      "source": "./plugin"
+    }
+  ]
+}

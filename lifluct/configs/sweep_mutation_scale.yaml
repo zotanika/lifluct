@@ -1,0 +1,10 @@
+experiment_id: phase4_sweep_mutation_scale
+configs:
+  - label: lifluct
+    path: phase4_train_regime.yaml
+    model_type: lifluct_multi_cell
+seeds: [1, 2, 3]
+sweep:
+  mutation_sigma_mu: [0.05, 0.15, 0.30]
+  mutation_sigma_beta: [0.05, 0.15, 0.30]
+group_by: [model_type, mutation_sigma_mu, mutation_sigma_beta]

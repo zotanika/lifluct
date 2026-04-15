@@ -1,0 +1,9 @@
+{
+  "name": "zotanika",
+  "plugins": [
+    {
+      "name": "lifluct",
+      "source": "github:zotanika/lifluct"
+    }
+  ]
+}

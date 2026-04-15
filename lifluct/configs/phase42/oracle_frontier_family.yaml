@@ -1,0 +1,36 @@
+family_name: family_oracle_frontier
+description: >
+  Oracle-lag and oracle-noise frontier for LIFLUCT and strong no-lysis baselines.
+comparison_family: no_lysis
+models:
+  - dynamic_fee_single
+  - best_fixed_single_cell
+  - lifluct_multi_cell_no_lysis
+seed_start: 1
+seed_count: 12
+retention_mode: summary_only
+lysis_allowed: false
+attribution_robustness_required: false
+best_fixed_search_manifest: best_fixed_train_family.yaml
+regimes:
+  - regime_id: oracle_perfect
+    base_config: ../phase4_test_regime_oracle_lag.yaml
+    overrides:
+      oracle_mode: perfect
+      oracle_lag_steps: 0
+  - regime_id: oracle_lag_1
+    base_config: ../phase4_test_regime_oracle_lag.yaml
+    overrides:
+      oracle_mode: lagged
+      oracle_lag_steps: 1
+  - regime_id: oracle_lag_3
+    base_config: ../phase4_test_regime_oracle_lag.yaml
+    overrides:
+      oracle_mode: lagged
+      oracle_lag_steps: 3
+  - regime_id: oracle_noise
+    base_config: ../phase4_test_regime_oracle_lag.yaml
+    overrides:
+      oracle_mode: noisy
+      oracle_lag_steps: 0
+      oracle_observation_noise: 0.02

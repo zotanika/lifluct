@@ -1,0 +1,10 @@
+# Smoke manifest for quick fixed-policy sanity checks.
+search_profile: smoke
+search_budget: 8
+search_seed: 7
+objective_mode: lp_minus_hodl
+family: no_lysis
+train_configs:
+  - phase4_train_regime.yaml
+test_configs:
+  - best_fixed_testset_lowvol.yaml
